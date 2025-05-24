@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WhatsApp Contactor</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #1e1e2e;
       color: #ffffff;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
+      margin: 0;
     }
 
     h1, h2 {
-      margin: 10px 0;
+      margin: 10px;
+      color: #00c2ff;
     }
 
     .input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-top: 20px;
     }
 
     select, input, button {
-      padding: 10px;
-      border-radius: 5px;
+      background-color: #333344;
       border: none;
+      padding: 10px;
+      color: #ffffff;
+      border-radius: 5px;
       margin: 5px;
-    }
-
-    select, input {
-      width: 200px;
-      background-color: #2d2d3a;
-      color: #fff;
+      width: 250px;
     }
 
     button {
-      background-color: #00c2ff;
-      color: #fff;
       cursor: pointer;
+      background-color: #00c2ff;
+    }
+
+    button:hover {
+      background-color: #00aaff;
     }
 
     .result {
       margin-top: 20px;
     }
 
-    /* Ad styles */
-    .top-banner {
-      display: flex;
-      justify-content: center;
-      margin: 10px 0;
+    .result a {
+      color: #00ffcc;
+      text-decoration: none;
     }
 
-    .ad-box {
+    /* Top Ad Banner */
+    .top-banner {
+      margin-bottom: 20px;
+    }
+
+    /* Bottom Ad Box */
+    .bottom-ad {
       background-color: #2b2b2b;
-      color: #00ffcc;
       padding: 20px;
+      width: 100%;
+      margin-top: 40px;
       text-align: center;
       border-top: 2px solid #444;
-      margin-top: 40px;
+    }
+
+    .bottom-ad h3 {
+      margin-top: 0;
+      color: #00ffcc;
     }
   </style>
 </head>
@@ -82,44 +93,42 @@
     <script type="text/javascript" src="//www.highperformanceformat.com/19f43ea5fb035d506bc4c8749dce010f/invoke.js"></script>
   </div>
 
-  <div class="container">
-    <h2>Made By:- Ajsal</h2>
-    <h1>WhatsApp Contactor</h1>
+  <!-- App Content -->
+  <h2>Made By:- Ajsal</h2>
+  <h1>WhatsApp Contactor</h1>
 
-    <div class="input-group">
-      <select id="countryCode">
-        <option value="91">🇮🇳 +91 (India)</option>
-        <option value="1">🇺🇸 +1 (USA)</option>
-        <option value="44">🇬🇧 +44 (UK)</option>
-        <option value="61">🇦🇺 +61 (Australia)</option>
-        <option value="971">🇦🇪 +971 (UAE)</option>
-        <option value="92">🇵🇰 +92 (Pakistan)</option>
-        <option value="880">🇧🇩 +880 (Bangladesh)</option>
-        <option value="81">🇯🇵 +81 (Japan)</option>
-        <option value="82">🇰🇷 +82 (South Korea)</option>
-        <option value="49">🇩🇪 +49 (Germany)</option>
-        <option value="33">🇫🇷 +33 (France)</option>
-        <option value="39">🇮🇹 +39 (Italy)</option>
-        <option value="34">🇪🇸 +34 (Spain)</option>
-        <option value="7">🇷🇺 +7 (Russia)</option>
-        <option value="86">🇨🇳 +86 (China)</option>
-        <option value="55">🇧🇷 +55 (Brazil)</option>
-        <option value="27">🇿🇦 +27 (South Africa)</option>
-        <!-- Add more if needed -->
-      </select>
-      <input type="text" id="phoneNumber" placeholder="Enter phone number">
-    </div>
-
+  <div class="input-group">
+    <select id="countryCode">
+      <option value="91">🇮🇳 +91 (India)</option>
+      <option value="1">🇺🇸 +1 (USA)</option>
+      <option value="44">🇬🇧 +44 (UK)</option>
+      <option value="61">🇦🇺 +61 (Australia)</option>
+      <option value="971">🇦🇪 +971 (UAE)</option>
+      <option value="92">🇵🇰 +92 (Pakistan)</option>
+      <option value="880">🇧🇩 +880 (Bangladesh)</option>
+      <option value="81">🇯🇵 +81 (Japan)</option>
+      <option value="82">🇰🇷 +82 (South Korea)</option>
+      <option value="49">🇩🇪 +49 (Germany)</option>
+      <option value="33">🇫🇷 +33 (France)</option>
+      <option value="39">🇮🇹 +39 (Italy)</option>
+      <option value="34">🇪🇸 +34 (Spain)</option>
+      <option value="7">🇷🇺 +7 (Russia)</option>
+      <option value="86">🇨🇳 +86 (China)</option>
+      <option value="55">🇧🇷 +55 (Brazil)</option>
+      <option value="27">🇿🇦 +27 (South Africa)</option>
+      <!-- More countries can be added -->
+    </select>
+    <input type="text" id="phoneNumber" placeholder="Enter phone number">
     <button id="searchButton">Search</button>
-
-    <div class="result" id="result">
-      <p>WhatsApp Number: <a href="" id="whatsappLink" target="_blank"></a></p>
-    </div>
   </div>
 
-  <!-- Bottom Dark Theme Ad Box -->
-  <div class="ad-box">
-    <h3>Ads</h3>
+  <div class="result" id="result">
+    <p>WhatsApp Number: <a href="" id="whatsappLink" target="_blank"></a></p>
+  </div>
+
+  <!-- Bottom Dark Ad Box -->
+  <div class="bottom-ad">
+    <h3>Sponsored Ad</h3>
     <script async="async" data-cfasync="false" src="//pl26732718.profitableratecpm.com/9e085548dabf566476883fb0b36fcc40/invoke.js"></script>
     <div id="container-9e085548dabf566476883fb0b36fcc40"></div>
   </div>
@@ -128,9 +137,12 @@
     document.getElementById("searchButton").addEventListener("click", function () {
       const code = document.getElementById("countryCode").value;
       const number = document.getElementById("phoneNumber").value.trim();
+      if (number === '') {
+        alert("Please enter a phone number.");
+        return;
+      }
       const fullNumber = code + number;
       const link = `https://wa.me/${fullNumber}`;
-
       const linkElement = document.getElementById("whatsappLink");
       linkElement.href = link;
       linkElement.innerText = link;
